@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Glassperts - Sliding Glass Door & Window Repair</title>
+  <meta name="description" content="The Glassperts sliding glass door & window repair specializes in sliding door, window, and glass repair. Over 23 years of industry experience serving South Florida." />
+  <link rel="icon" type="image/png" href="/images/logo.png" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Open+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <link rel="stylesheet" href="/src/style.css" />
+</head>
+<body>
+
+  <!-- ===================== HEADER / NAVIGATION ===================== -->
+  <header id="site-header">
+    <div class="header-inner">
+      <a href="#" class="logo" id="header-logo">
+        <img src="/images/logo.png" alt="The Glassperts Logo" />
+      </a>
+
+      <nav id="main-nav">
+        <ul class="nav-list">
+          <li><a href="#hero" class="nav-link active">HOME</a></li>
+          <li class="has-dropdown">
+            <a href="#services" class="nav-link">SERVICES <i class="fas fa-chevron-down"></i></a>
+            <ul class="dropdown">
+              <li><a href="#services">Sliding Glass Door Repair</a></li>
+              <li><a href="#services">Window Glass Repair</a></li>
+              <li><a href="#services">Commercial Glass Repair</a></li>
+              <li><a href="#services">Impact Windows and Doors</a></li>
+            </ul>
+          </li>
+          <li><a href="#gallery" class="nav-link">GALLERY</a></li>
+          <li class="has-dropdown">
+            <a href="#service-areas" class="nav-link">SERVICE AREAS <i class="fas fa-chevron-down"></i></a>
+            <ul class="dropdown">
+              <li><a href="#service-areas">Miami</a></li>
+              <li><a href="#service-areas">Kendall</a></li>
+              <li><a href="#service-areas">Coral Gables</a></li>
+              <li><a href="#service-areas">Homestead</a></li>
+              <li><a href="#service-areas">Pinecrest</a></li>
+              <li><a href="#service-areas">Miami Lakes</a></li>
+              <li><a href="#service-areas">Miami Beach</a></li>
+              <li><a href="#service-areas">Hollywood</a></li>
+              <li><a href="#service-areas">Cutler Bay</a></li>
+              <li><a href="#service-areas">Cutler Ridge</a></li>
+            </ul>
+          </li>
+          <li><a href="#faq" class="nav-link">BLOG</a></li>
+          <li><a href="#contact-footer" class="nav-link">CONTACT</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-ctas">
+        <a href="#quote-form" class="btn btn-yellow" id="header-quote-btn">GET FREE QUOTE</a>
+        <a href="tel:+18664937545" class="btn btn-white" id="header-phone-btn">
+          <i class="fas fa-phone"></i> (866)-493-7545
+        </a>
+      </div>
+
+      <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Toggle Menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- ===================== HERO SECTION ===================== -->
+  <section id="hero" class="hero-section">
+    <div class="hero-overlay"></div>
+    <div class="hero-inner">
+      <div class="hero-content">
+        <h1 class="hero-title">THE GLASSPERTS<br/>SLIDING GLASS DOOR &amp; WINDOW REPAIR</h1>
+        <p class="hero-subtitle">The glassperts sliding glass door &amp; window repair specializes in sliding door, window, and glass repair. With a foundation built on expertise gained from over 5 years of industry experience, we offer reliable services like sliding glass door repair, window glass repair, commercial glass repair, and installation of impact windows and doors.</p>
+      </div>
+      <div class="hero-form-wrapper" id="quote-form">
+        <div class="hero-form-card">
+          <img src="/images/logo.png" alt="The Glassperts" class="form-logo" />
+          <h2 class="form-title">GET A FREE QUOTE</h2>
+          <form id="quote-form-element" class="quote-form">
+            <div class="form-row">
+              <div class="form-group">
+                <label for="full-name">Full Name <span class="required">*</span></label>
+                <input type="text" id="full-name" name="fullName" placeholder="John Smith" required />
+              </div>
+              <div class="form-group">
+                <label for="phone">Phone <span class="required">*</span></label>
+                <input type="tel" id="phone" name="phone" placeholder="(555) 555-5555" required />
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="message">Short message about your needs</label>
+              <textarea id="message" name="message" placeholder="**Your message goes straight to my phone, I'll get back to you as soon as I'm available**" rows="3"></textarea>
+            </div>
+            <div class="form-checkbox">
+              <input type="checkbox" id="terms" name="terms" required />
+              <label for="terms">I agree to <a href="#" class="link-yellow">terms &amp; conditions</a> provided by the company. By providing my phone number, I agree to receive text messages from the business.</label>
+            </div>
+            <button type="submit" class="btn btn-yellow btn-full" id="form-submit-btn">SEND</button>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="wave-divider">
+      <svg viewBox="0 0 1440 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M0 120L60 110C120 100 240 80 360 73.3C480 67 600 73 720 80C840 87 960 93 1080 90C1200 87 1320 73 1380 66.7L1440 60V120H1380C1320 120 1200 120 1080 120C960 120 840 120 720 120C600 120 480 120 360 120C240 120 120 120 60 120H0Z" fill="white"/>
+      </svg>
+    </div>
+  </section>
+
+  <!-- ===================== TRUST BADGES ===================== -->
+  <section id="trust-badges" class="trust-section">
+    <div class="container">
+      <div class="trust-grid">
+        <div class="trust-item">
+          <div class="trust-icon"><i class="fas fa-map-marker-alt"></i></div>
+          <span>100% Local</span>
+        </div>
+        <div class="trust-item">
+          <div class="trust-icon"><i class="fas fa-home"></i></div>
+          <span>Family Business</span>
+        </div>
+        <div class="trust-item">
+          <div class="trust-icon"><i class="fas fa-award"></i></div>
+          <span>23+ Years Experience</span>
+        </div>
+        <div class="trust-item">
+          <div class="trust-icon"><i class="fas fa-shield-halved"></i></div>
+          <span>Insured</span>
+        </div>
+        <div class="trust-item">
+          <div class="trust-icon"><i class="fas fa-certificate"></i></div>
+          <span>Fully Licensed</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== ABOUT US ===================== -->
+  <section id="about" class="about-section">
+    <div class="container">
+      <div class="about-grid">
+        <div class="about-content">
+          <h2 class="section-title">ABOUT US<span class="title-underline"></span></h2>
+          <p>The glassperts sliding glass door &amp; window repair is a family-owned business started by Manny Vega, who began his career at 16 and decided to open the company in 2007. We bring years of hands-on experience in sliding door, window, and glass repair, focusing on quality and customer satisfaction.</p>
+          <p class="about-highlight">WHAT WE ARE BEST AT</p>
+        </div>
+        <div class="about-image">
+          <img src="/images/company-van.png" alt="The Glassperts Company Van" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== OUR SERVICES ===================== -->
+  <section id="services" class="services-section">
+    <div class="container">
+      <h2 class="section-title center">OUR SERVICES<span class="title-underline center"></span></h2>
+      <div class="services-grid">
+        <div class="service-card" id="service-sliding-door">
+          <div class="service-image">
+            <img src="/images/sliding-door.png" alt="Sliding Glass Door Repair" />
+          </div>
+          <div class="service-body">
+            <h3>Sliding Glass Door Repair</h3>
+            <p>Expert repairs for smooth and secure sliding glass doors, addressing issues with tracks, rollers, and locks.</p>
+            <a href="#" class="btn btn-dark">LEARN MORE <i class="fas fa-arrow-right"></i></a>
+          </div>
+        </div>
+        <div class="service-card" id="service-window-repair">
+          <div class="service-image">
+            <img src="/images/window-repair.png" alt="Window Glass Repair" />
+          </div>
+          <div class="service-body">
+            <h3>Window Glass Repair</h3>
+            <p>Professional repair services for cracked or damaged windows, ensuring clarity and insulation.</p>
+            <a href="#" class="btn btn-dark">LEARN MORE <i class="fas fa-arrow-right"></i></a>
+          </div>
+        </div>
+        <div class="service-card" id="service-commercial">
+          <div class="service-image">
+            <img src="/images/commercial-glass.png" alt="Commercial Glass Repair" />
+          </div>
+          <div class="service-body">
+            <h3>Commercial Glass Repair</h3>
+            <p>Specialized repair and replacement for commercial glass, including storefronts and office windows.</p>
+            <a href="#" class="btn btn-dark">LEARN MORE <i class="fas fa-arrow-right"></i></a>
+          </div>
+        </div>
+        <div class="service-card" id="service-impact-windows">
+          <div class="service-image">
+            <img src="/images/sliding-door.png" alt="Impact Windows and Doors" />
+          </div>
+          <div class="service-body">
+            <h3>Impact Windows and Doors</h3>
+            <p>Installation of durable impact-resistant windows and doors to enhance safety and energy efficiency.</p>
+            <a href="#" class="btn btn-dark">LEARN MORE <i class="fas fa-arrow-right"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== OUR PROCESS ===================== -->
+  <section id="process" class="process-section">
+    <div class="container">
+      <h2 class="section-title center">OUR PROCESS<span class="title-underline center"></span></h2>
+      <p class="section-subtitle">Our process is simple and only contains a few simple steps</p>
+      <div class="process-grid">
+        <div class="process-step" id="process-step-1">
+          <div class="process-number">1</div>
+          <div class="process-icon"><i class="fas fa-phone-alt"></i></div>
+          <h3>Contact Us</h3>
+          <p>Reach out to us by phone or through our contact form</p>
+        </div>
+        <div class="process-connector"><i class="fas fa-arrow-right"></i></div>
+        <div class="process-step" id="process-step-2">
+          <div class="process-number">2</div>
+          <div class="process-icon"><i class="fas fa-clipboard-list"></i></div>
+          <h3>Free Estimate</h3>
+          <p>We provide a free, no-obligation estimate for your needs</p>
+        </div>
+        <div class="process-connector"><i class="fas fa-arrow-right"></i></div>
+        <div class="process-step" id="process-step-3">
+          <div class="process-number">3</div>
+          <div class="process-icon"><i class="fas fa-tools"></i></div>
+          <h3>Repair</h3>
+          <p>Our expert technicians perform the repair with quality materials</p>
+        </div>
+        <div class="process-connector"><i class="fas fa-arrow-right"></i></div>
+        <div class="process-step" id="process-step-4">
+          <div class="process-number">4</div>
+          <div class="process-icon"><i class="fas fa-check-circle"></i></div>
+          <h3>Complete</h3>
+          <p>Enjoy your perfectly repaired glass doors and windows</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== GALLERY ===================== -->
+  <section id="gallery" class="gallery-section">
+    <div class="container">
+      <p class="section-label">SEE WHY OUR CUSTOMERS LOVE US</p>
+      <h2 class="section-title center">SEE OUR WORK<span class="title-underline center"></span></h2>
+      <div class="gallery-grid">
+        <div class="gallery-item"><img src="/images/sliding-door.png" alt="Gallery 1" /></div>
+        <div class="gallery-item"><img src="/images/window-repair.png" alt="Gallery 2" /></div>
+        <div class="gallery-item"><img src="/images/commercial-glass.png" alt="Gallery 3" /></div>
+        <div class="gallery-item"><img src="/images/company-van.png" alt="Gallery 4" /></div>
+        <div class="gallery-item"><img src="/images/hero-bg.png" alt="Gallery 5" /></div>
+        <div class="gallery-item"><img src="/images/sliding-door.png" alt="Gallery 6" /></div>
+      </div>
+      <div class="gallery-cta">
+        <a href="#" class="btn btn-outline-white" id="gallery-see-all-btn">SEE ALL PHOTOS</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== REVIEWS ===================== -->
+  <section id="reviews" class="reviews-section">
+    <div class="container">
+      <p class="section-label">DISCOVER WHAT OUR CUSTOMERS HAVE TO SAY ABOUT US</p>
+      <h2 class="section-title center">REVIEWS<span class="title-underline center"></span></h2>
+      <div class="reviews-slider" id="reviews-slider">
+        <div class="reviews-track" id="reviews-track">
+          <div class="review-card">
+            <div class="review-stars">
+              <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+            </div>
+            <p class="review-text">"The Glassperts did an amazing job repairing our sliding glass door. It works like new! Fast, professional, and affordable. Highly recommend."</p>
+            <div class="review-author">
+              <div class="review-avatar"><i class="fas fa-user"></i></div>
+              <div>
+                <strong>Maria G.</strong>
+                <span>Miami, FL</span>
+              </div>
+            </div>
+          </div>
+          <div class="review-card">
+            <div class="review-stars">
+              <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+            </div>
+            <p class="review-text">"Excellent service! They replaced the rollers on my patio door and now it glides perfectly. Very knowledgeable and friendly team. Will call again."</p>
+            <div class="review-author">
+              <div class="review-avatar"><i class="fas fa-user"></i></div>
+              <div>
+                <strong>Carlos R.</strong>
+                <span>Kendall, FL</span>
+              </div>
+            </div>
+          </div>
+          <div class="review-card">
+            <div class="review-stars">
+              <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+            </div>
+            <p class="review-text">"We had a broken window and needed quick help. The Glassperts came out the same day and fixed it. Great communication and competitive pricing."</p>
+            <div class="review-author">
+              <div class="review-avatar"><i class="fas fa-user"></i></div>
+              <div>
+                <strong>Jennifer L.</strong>
+                <span>Hollywood, FL</span>
+              </div>
+            </div>
+          </div>
+          <div class="review-card">
+            <div class="review-stars">
+              <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+            </div>
+            <p class="review-text">"Impact window installation was seamless. They handled everything professionally from start to finish. Our home feels safer now. Thank you!"</p>
+            <div class="review-author">
+              <div class="review-avatar"><i class="fas fa-user"></i></div>
+              <div>
+                <strong>David M.</strong>
+                <span>Coral Gables, FL</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="slider-controls">
+          <button class="slider-btn prev" id="reviews-prev" aria-label="Previous review"><i class="fas fa-chevron-left"></i></button>
+          <button class="slider-btn next" id="reviews-next" aria-label="Next review"><i class="fas fa-chevron-right"></i></button>
+        </div>
+      </div>
+      <div class="reviews-cta">
+        <a href="#" class="btn btn-yellow" id="review-google-btn">REVIEW US ON GOOGLE</a>
+        <a href="#" class="btn btn-outline-dark" id="leave-review-btn">LEAVE US A REVIEW</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== FAQ ===================== -->
+  <section id="faq" class="faq-section">
+    <div class="container">
+      <h2 class="section-title center light">FREQUENTLY ASKED QUESTIONS<span class="title-underline center"></span></h2>
+      <div class="faq-list">
+        <div class="faq-item" id="faq-1">
+          <button class="faq-question" aria-expanded="false">
+            <span>Can you provide references from past clients?</span>
+            <i class="fas fa-plus"></i>
+          </button>
+          <div class="faq-answer">
+            <p>Absolutely, we can provide references from past clients. Additionally, you can read the reviews and testimonials from our satisfied customers on our website. If you would like to speak with specific past clients, we can provide their contact information upon request.</p>
+          </div>
+        </div>
+        <div class="faq-item" id="faq-2">
+          <button class="faq-question" aria-expanded="false">
+            <span>What sets you apart from other contractors in the area?</span>
+            <i class="fas fa-plus"></i>
+          </button>
+          <div class="faq-answer">
+            <p>At The glassperts sliding glass door &amp; window repair, we distinguish ourselves through meticulous attention to detail, a dedication to quality, and a personalized approach. We prioritize client communication to seamlessly bring their vision to life.</p>
+          </div>
+        </div>
+        <div class="faq-item" id="faq-3">
+          <button class="faq-question" aria-expanded="false">
+            <span>What types of services do you offer?</span>
+            <i class="fas fa-plus"></i>
+          </button>
+          <div class="faq-answer">
+            <p>Our services at The glassperts sliding glass door &amp; window repair include sliding glass door repair, window glass repair, commercial glass repair, and installation of impact windows and doors. We are dedicated to providing top-quality workmanship and reliable solutions.</p>
+          </div>
+        </div>
+        <div class="faq-item" id="faq-4">
+          <button class="faq-question" aria-expanded="false">
+            <span>Is there a fee for a consultation or estimate/quote?</span>
+            <i class="fas fa-plus"></i>
+          </button>
+          <div class="faq-answer">
+            <p>No, The glassperts sliding glass door &amp; window repair offers complimentary estimates to all prospective clients.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== SERVICE AREAS ===================== -->
+  <section id="service-areas" class="areas-section">
+    <div class="container">
+      <h2 class="section-title center">PROUDLY SERVING THESE AREAS<span class="title-underline center"></span></h2>
+      <div class="areas-grid">
+        <div class="areas-map">
+          <div class="map-placeholder">
+            <i class="fas fa-map-marked-alt"></i>
+            <p>South Florida Service Area</p>
+          </div>
+        </div>
+        <div class="areas-list">
+          <div class="area-item"><i class="fas fa-map-marker-alt"></i><span>Miami</span></div>
+          <div class="area-item"><i class="fas fa-map-marker-alt"></i><span>Kendall</span></div>
+          <div class="area-item"><i class="fas fa-map-marker-alt"></i><span>Coral Gables</span></div>
+          <div class="area-item"><i class="fas fa-map-marker-alt"></i><span>Homestead</span></div>
+          <div class="area-item"><i class="fas fa-map-marker-alt"></i><span>Pinecrest</span></div>
+          <div class="area-item"><i class="fas fa-map-marker-alt"></i><span>Miami Lakes</span></div>
+          <div class="area-item"><i class="fas fa-map-marker-alt"></i><span>Miami Beach</span></div>
+          <div class="area-item"><i class="fas fa-map-marker-alt"></i><span>Hollywood</span></div>
+          <div class="area-item"><i class="fas fa-map-marker-alt"></i><span>Cutler Bay</span></div>
+          <div class="area-item"><i class="fas fa-map-marker-alt"></i><span>Cutler Ridge</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== CTA BANNER ===================== -->
+  <section id="cta-banner" class="cta-section">
+    <div class="container">
+      <h2>GET A FREE QUOTE TODAY!</h2>
+      <p>The glassperts sliding glass door &amp; window repair</p>
+      <div class="cta-buttons">
+        <a href="tel:+18664937545" class="btn btn-yellow btn-large" id="cta-phone-btn"><i class="fas fa-phone"></i> (866)-493-7545</a>
+        <a href="#quote-form" class="btn btn-outline-white btn-large" id="cta-quote-btn">GET FREE QUOTE</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer id="contact-footer" class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <img src="/images/logo.png" alt="The Glassperts" class="footer-logo" />
+          <p>The glassperts sliding glass door &amp; window repair</p>
+          <div class="footer-contact-info">
+            <a href="tel:+18664937545"><i class="fas fa-phone"></i> (866)-493-7545</a>
+            <a href="mailto:Candy@glassexpertsfl.com"><i class="fas fa-envelope"></i> Candy@glassexpertsfl.com</a>
+          </div>
+        </div>
+        <div class="footer-links">
+          <h4>CONTACT</h4>
+          <p class="footer-label">business</p>
+          <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#gallery">Gallery</a></li>
+            <li><a href="#reviews">Testimonials</a></li>
+            <li><a href="#">Blog</a></li>
+            <li><a href="#contact-footer">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-links">
+          <h4>OUR SERVICES</h4>
+          <ul>
+            <li><a href="#services">Sliding Glass Door</a></li>
+            <li><a href="#services">Window Glass Repair</a></li>
+            <li><a href="#services">Commercial Glass</a></li>
+            <li><a href="#services">Impact Windows &amp; Doors</a></li>
+          </ul>
+        </div>
+        <div class="footer-links">
+          <h4>SERVICE AREAS</h4>
+          <ul>
+            <li><a href="#service-areas">Miami</a></li>
+            <li><a href="#service-areas">Kendall</a></li>
+            <li><a href="#service-areas">Coral Gables</a></li>
+            <li><a href="#service-areas">Homestead</a></li>
+            <li><a href="#service-areas">Pinecrest</a></li>
+            <li><a href="#service-areas">Miami Lakes</a></li>
+            <li><a href="#service-areas">Miami Beach</a></li>
+            <li><a href="#service-areas">Hollywood</a></li>
+            <li><a href="#service-areas">Cutler Bay</a></li>
+            <li><a href="#service-areas">Cutler Ridge</a></li>
+          </ul>
+        </div>
+        <div class="footer-hours">
+          <h4>OPERATING HOURS</h4>
+          <ul>
+            <li><span>Sun:</span> 8:00am - 5:00pm</li>
+            <li><span>Mon:</span> 8:00am - 8:00pm</li>
+            <li><span>Tue:</span> 8:00am - 8:00pm</li>
+            <li><span>Wed:</span> 8:00am - 5:00pm</li>
+            <li><span>Thu:</span> 8:00am - 8:00pm</li>
+            <li><span>Fri:</span> 8:00am - 8:00pm</li>
+            <li><span>Sat:</span> 8:00am - 8:00pm</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div class="footer-legal">
+          <a href="#">Terms &amp; Conditions</a>
+          <a href="#">Privacy Policy</a>
+        </div>
+        <p>&copy; 2024 The Glassperts. All Rights Reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ===================== FLOATING CTA ===================== -->
+  <a href="#quote-form" class="floating-cta" id="floating-quote-btn">GET FREE QUOTE</a>
+
+  <!-- ===================== CHAT WIDGET ===================== -->
+  <div class="chat-widget" id="chat-widget">
+    <div class="chat-popup" id="chat-popup">
+      <div class="chat-popup-header">
+        <img src="/images/logo.png" alt="The Glassperts" />
+        <button class="chat-close" id="chat-close">&times;</button>
+      </div>
+      <div class="chat-popup-body">
+        <p>Shoot me any questions and I will get back to you as soon as I have a minute</p>
+        <div class="chat-input-wrapper">
+          <input type="text" placeholder="Type a message..." class="chat-input" />
+          <button class="chat-send"><i class="fas fa-paper-plane"></i></button>
+        </div>
+      </div>
+    </div>
+    <button class="chat-toggle" id="chat-toggle" aria-label="Chat">
+      <i class="fas fa-headset"></i>
+    </button>
+  </div>
+
+  <script type="module" src="/src/main.ts"></script>
+</body>
+</html>
