@@ -78,12 +78,12 @@
           @keyup.enter="handleUserChat" 
           type="text" 
           placeholder="Ask a follow-up question..." 
-          :disabled="isSending || totalSent >= 5"
+          :disabled="isSending || totalSent >= 10"
         />
-        <button @click="handleUserChat" :disabled="isSending || totalSent >= 5">
+        <button @click="handleUserChat" :disabled="isSending || totalSent >= 10">
           <i class="fas fa-paper-plane"></i>
         </button>
-        <div v-if="totalSent >= 5" class="limit-warning">Message limit reached for this session.</div>
+        <div v-if="totalSent >= 10" class="limit-warning">Message limit reached. Please call us at (866)-493-7545 for further help!</div>
       </div>
     </div>
   </div>
@@ -110,30 +110,6 @@ const currentMessage = ref('')
 
 const webhookUrl = 'https://primary-production-55e84.up.railway.app/webhook/d078abf0-ba5e-4eaa-a155-032f00233774/chat'
 
-// Site Knowledge Context to inject once
-const siteKnowledge = `
-Business Name: The Glassperts
-Founder: Manny Vega (Family-owned since 2007, Manny started his career at 16).
-Availability: Open 24/7 for emergency sliding door and window repairs across South Florida.
-
-Primary Services: 
-1. Sliding Glass Door Repair (Expertise in tracks, rollers, and locks).
-2. Window Glass Repair (Fixes for cracked/damaged glass for clarity and insulation).
-3. Commercial Glass (Professional storefront and office glass services).
-4. Impact Windows & Doors (Durable installation for hurricane safety).
-
-Service Areas (South Florida): 
-Miami, Kendall, Coral Gables, Homestead, Pinecrest, Miami Lakes, Miami Beach, Hollywood, Cutler Bay, Cutler Ridge.
-
-How It Works: 
-1. Contact Us (24/7 via phone or chat form).
-2. Free Estimate (No-obligation).
-3. Professional Repair (Experienced technicians).
-4. Complete!
-
-Company Promise: Over 23 years of industry experience. Family-owned, reliable, and committed to South Florida residents.
-`.trim()
-
 const handleLeadSubmit = async () => {
   if (!leadForm.name || !leadForm.phone || !leadForm.message) return
   isSending.value = true
@@ -156,8 +132,7 @@ const handleLeadSubmit = async () => {
         chatInput: initialText,
         metadata: {
           name: leadForm.name,
-          phone: leadForm.phone,
-          site_knowledge: siteKnowledge
+          phone: leadForm.phone
         }
       }
     })
@@ -176,7 +151,7 @@ const handleLeadSubmit = async () => {
 }
 
 const handleUserChat = async () => {
-  if (!currentMessage.value.trim() || totalSent.value >= 5 || isSending.value) return
+  if (!currentMessage.value.trim() || totalSent.value >= 10 || isSending.value) return
   
   const text = currentMessage.value.trim()
   currentMessage.value = ''
