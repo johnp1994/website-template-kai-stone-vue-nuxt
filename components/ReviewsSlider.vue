@@ -29,8 +29,7 @@
         </div>
       </div>
       <div class="reviews-cta">
-        <NuxtLink to="/review" class="btn btn-yellow" id="review-google-btn">LEAVE US A 5-STAR REVIEW</NuxtLink>
-        <NuxtLink to="/review" class="btn btn-outline-dark" id="leave-review-btn">GIVE US FEEDBACK</NuxtLink>
+        <NuxtLink to="/review" class="btn btn-yellow" id="rate-experience-btn">RATE YOUR EXPERIENCE</NuxtLink>
       </div>
     </div>
   </section>

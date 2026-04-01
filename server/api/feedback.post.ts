@@ -27,6 +27,24 @@ export default defineEventHandler(async (event) => {
     createdAt: new Date().toISOString(),
   }
 
+  // Save to Internal Data File for Admin Panel
+  const feedbackDbPath = path.resolve(process.cwd(), 'data', 'feedback.json')
+  try {
+    let existingFeedback = []
+    try {
+      const data = await fs.readFile(feedbackDbPath, 'utf-8')
+      existingFeedback = JSON.parse(data)
+    } catch (e) {
+      // Create data directory if it doesn't exist yet
+      const dataDir = path.resolve(process.cwd(), 'data')
+      await fs.mkdir(dataDir, { recursive: true })
+    }
+    existingFeedback.unshift(feedback) // Put newest feedback first
+    await fs.writeFile(feedbackDbPath, JSON.stringify(existingFeedback, null, 2), 'utf-8')
+  } catch (err) {
+    console.error('Failed to save feedback to internal database:', err)
+  }
+
   // Attempt to read dynamically saved config from Admin Backend
   const configPath = path.resolve(process.cwd(), 'data', 'config.json')
   let fsConfig: any = {}

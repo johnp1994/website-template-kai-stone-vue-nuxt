@@ -58,6 +58,42 @@
           </div>
         </form>
       </div>
+
+      <!-- Internal Feedback Section -->
+      <div class="feedback-section">
+        <h2 class="feedback-heading">Recent Customer Feedback</h2>
+        <p class="settings-desc">Review internal feedback submitted via the 1-4 rating funnel.</p>
+        
+        <div v-if="isLoadingFeedbacks" class="feedback-loading">
+          Loading feedback...
+        </div>
+        <div v-else-if="feedbacks.length === 0" class="feedback-empty">
+          No feedback received yet.
+        </div>
+        <div v-else class="feedback-list">
+          <div v-for="item in feedbacks" :key="item.id" class="feedback-card">
+            <div class="feedback-card-header">
+              <div class="feedback-stars">
+                <i v-for="n in item.rating" :key="n" class="fas fa-star gold-star"></i>
+                <i v-for="n in (5 - item.rating)" :key="'empty-'+n" class="far fa-star empty-star"></i>
+                <span class="rating-number">{{ item.rating }}/5</span>
+              </div>
+              <span class="feedback-date">{{ new Date(item.createdAt).toLocaleDateString() }}</span>
+            </div>
+            
+            <p class="feedback-message">"{{ item.message }}"</p>
+            
+            <div class="feedback-contact">
+              <div class="contact-item">
+                <i class="fas fa-user"></i> {{ item.name }}
+              </div>
+              <div class="contact-item">
+                <i class="fas fa-phone"></i> {{ item.phone }}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </template>
@@ -76,6 +112,10 @@ const isSaving = ref(false)
 const successMsg = ref('')
 const errorMsg = ref('')
 
+// Feedback refs
+const feedbacks = ref<any[]>([])
+const isLoadingFeedbacks = ref(true)
+
 const form = reactive({
   adminEmail: 'admin@glassexpertsfl.org',
   smtpHost: 'smtp.gmail.com',
@@ -85,7 +125,7 @@ const form = reactive({
   businessEmail: ''
 })
 
-// Load Config on Mount
+// Load Config and Feedbacks on Mount
 onMounted(async () => {
   try {
     const res = await $fetch('/api/admin/config')
@@ -100,9 +140,23 @@ onMounted(async () => {
   } catch (err: any) {
     if (err.statusCode === 401) {
       router.push('/admin/login')
+      return // Don't proceed to fetching feedbacks if unauthorized
     } else {
       errorMsg.value = 'Failed to load configuration.'
     }
+  }
+
+  // Fetch Feedbacks
+  try {
+    isLoadingFeedbacks.value = true
+    const fbRes = await $fetch('/api/admin/feedback')
+    if (fbRes.success) {
+      feedbacks.value = fbRes.data
+    }
+  } catch(err) {
+    console.error('Failed to load feedbacks', err)
+  } finally {
+    isLoadingFeedbacks.value = false
   }
 })
 
@@ -179,11 +233,12 @@ const logout = async () => {
 }
 
 .settings-card {
-  background: var(--navy); /* Changed from gray-card to navy to fix contrast */
+  background: var(--navy);
   border-radius: var(--radius-lg);
   padding: 32px;
   border: 1px solid rgba(255, 255, 255, 0.05);
   box-shadow: var(--shadow-xl);
+  margin-bottom: 40px;
 }
 
 .settings-card h2 {
@@ -249,7 +304,7 @@ const logout = async () => {
   padding: 12px 16px;
   border-radius: 8px;
   border: 1px solid var(--border-light);
-  background: var(--navy);
+  background: var(--bg-primary);
   color: var(--white);
   transition: all var(--transition-fast);
 }
@@ -279,6 +334,105 @@ const logout = async () => {
 .btn-sm {
   padding: 8px 16px;
   font-size: 0.85rem;
+}
+
+/* Feedback Section styling */
+.feedback-section {
+  margin-top: 48px;
+}
+
+.feedback-heading {
+  color: var(--white);
+  font-family: var(--font-heading);
+  font-size: 1.6rem;
+  margin-bottom: 8px;
+}
+
+.feedback-loading,
+.feedback-empty {
+  background: var(--navy);
+  padding: 32px;
+  border-radius: var(--radius-lg);
+  text-align: center;
+  color: var(--text-white-faded);
+  border: 1px dashed rgba(255, 255, 255, 0.1);
+}
+
+.feedback-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.feedback-card {
+  background: var(--navy);
+  padding: 24px;
+  border-radius: var(--radius-lg);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  box-shadow: var(--shadow-xl);
+}
+
+.feedback-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.feedback-stars {
+  font-size: 0.95rem;
+}
+
+.gold-star {
+  color: var(--gold);
+  margin-right: 2px;
+}
+
+.empty-star {
+  color: rgba(255, 255, 255, 0.2);
+  margin-right: 2px;
+}
+
+.rating-number {
+  color: var(--white);
+  margin-left: 8px;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.feedback-date {
+  color: var(--text-white-faded);
+  font-size: 0.85rem;
+}
+
+.feedback-message {
+  color: var(--text-white-dim);
+  line-height: 1.6;
+  font-style: italic;
+  margin-bottom: 20px;
+}
+
+.feedback-contact {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--white);
+  font-size: 0.85rem;
+  background: rgba(255, 255, 255, 0.05);
+  padding: 6px 12px;
+  border-radius: 6px;
+}
+
+.contact-item i {
+  color: var(--gold);
 }
 
 @media (max-width: 600px) {
